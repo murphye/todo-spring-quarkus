@@ -56,7 +56,7 @@ class TodoComponent extends HTMLElement {
     }
 
     initialize() {
-        const path = '/todo/v2/';
+        const path = '/todo/';
         const todo = this;
         this.form = this.shadowRoot.querySelector('form');
 
