@@ -1,5 +1,5 @@
 
-const path = '/todo/v2/';
+const path = '/v2/todo/';
 document.addEventListener("DOMContentLoaded", function(){
     fetch(path)
     .then(response => response.json())
