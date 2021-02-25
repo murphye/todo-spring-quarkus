@@ -45,7 +45,7 @@ class TodoComponent extends HTMLElement {
         super();
         this.attachShadow({mode: 'open'});
 
-        fetch('./todo-component.html')
+        fetch('./v1/todo-component.html')
         .then(stream => stream.text())
         .then(html => {
             const tmpl = document.createElement('template');
@@ -56,7 +56,7 @@ class TodoComponent extends HTMLElement {
     }
 
     initialize() {
-        const path = '/todo/';
+        const path = '/v1/todo/';
         const todo = this;
         this.form = this.shadowRoot.querySelector('form');
 
