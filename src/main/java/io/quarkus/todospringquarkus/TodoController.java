@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/todo/v2")
+@RequestMapping("/todo/v1")
 public class TodoController {
 
     @Autowired
@@ -24,7 +24,11 @@ public class TodoController {
 
     @GetMapping
     public List<TodoEntity> findAll() {
-        return todoRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+        List<TodoEntity> todoEntities = todoRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+        for(var todoEntity : todoEntities) {
+            todoEntity.setTitle(todoEntity.getTitle().toUpperCase());
+        }
+        return todoEntities;
     }
  
     @GetMapping("/{id}")
@@ -42,11 +46,5 @@ public class TodoController {
     @Transactional
     public TodoEntity create(@RequestBody TodoEntity resource) {
         return todoRepository.save(resource);
-    }
- 
-    @DeleteMapping("/{id}")
-    @Transactional
-    public void delete(@PathVariable("id") Long id) {
-        todoRepository.deleteById(id);
     }
 }

@@ -7,15 +7,15 @@
 #
 # Then, build the image with:
 #
-# docker build -f src/main/docker/Dockerfile -t murphye/quarkus-todo:2.0 .
+# docker build -f src/main/docker/Dockerfile -t murphye/quarkus-todo:1.0 .
 #
 # Then run the container using:
 #
-# docker run -i --rm -p 8080:8080 murphye/quarkus-todo:2.0
+# docker run -i --rm -p 8080:8080 murphye/quarkus-todo:1.0
 #
 # Then push the image using:
 #
-# docker push murphye/quarkus-todo:2.0
+# docker push murphye/quarkus-todo:1.0
 #
 ###
 FROM registry.access.redhat.com/ubi8/ubi-minimal:8.3

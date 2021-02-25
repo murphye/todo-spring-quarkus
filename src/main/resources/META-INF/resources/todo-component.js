@@ -56,7 +56,7 @@ class TodoComponent extends HTMLElement {
     }
 
     initialize() {
-        const path = '/todo/v2/';
+        const path = '/todo/v1/';
         const todo = this;
         this.form = this.shadowRoot.querySelector('form');
 
@@ -64,16 +64,6 @@ class TodoComponent extends HTMLElement {
         this.id;
         this.title;
         this.completed;
-
-        this.form.elements['delete'].addEventListener('click', function(e) {
-            fetch(path + todo.id, {
-                method: 'DELETE'
-            })
-            .then(response => {
-                todo.remove();
-            })
-            .catch(err => console.error(err));
-        });
         
         this.form.elements['title'].addEventListener('keyup', function(e) {
             e.preventDefault();
