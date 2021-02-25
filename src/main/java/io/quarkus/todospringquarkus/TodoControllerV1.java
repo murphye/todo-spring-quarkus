@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/todo")
-public class TodoController {
+@RequestMapping("/todo/v1")
+public class TodoControllerV1 {
 
     @Autowired
     private TodoRepository todoRepository;
