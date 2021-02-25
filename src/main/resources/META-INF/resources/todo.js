@@ -1,6 +1,7 @@
 
+const path = '/todo/v2/';
 document.addEventListener("DOMContentLoaded", function(){
-    fetch('/todo')
+    fetch(path)
     .then(response => response.json())
     .then(arr => {
         var todos = document.getElementById("todos");

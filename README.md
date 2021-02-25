@@ -22,3 +22,8 @@ To run as Quarkus:
 ```
 ./.mvnw clean spring-boot:run
 ```
+
+
+## Kubernetes
+
+./mvnw package -Pquarkus-native,quarkus -Dquarkus.native.container-build=true

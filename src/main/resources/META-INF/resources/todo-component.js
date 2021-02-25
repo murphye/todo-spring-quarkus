@@ -56,6 +56,7 @@ class TodoComponent extends HTMLElement {
     }
 
     initialize() {
+        const path = '/todo/v2/';
         const todo = this;
         this.form = this.shadowRoot.querySelector('form');
 
@@ -65,7 +66,7 @@ class TodoComponent extends HTMLElement {
         this.completed;
 
         this.form.elements['delete'].addEventListener('click', function(e) {
-            fetch('/todo/' + todo.id, {
+            fetch(path + todo.id, {
                 method: 'DELETE'
             })
             .then(response => {
@@ -98,7 +99,7 @@ class TodoComponent extends HTMLElement {
             todo.completed = data.completed;
 
             if(data.id == '') { // New Todo
-                fetch('/todo', {
+                fetch(path, {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(data)
@@ -116,7 +117,7 @@ class TodoComponent extends HTMLElement {
             else { // Update Todo
                 // Convert completed to boolean value
                 (data.completed == 'on') ? data.completed = true : data.completed = false;
-                fetch('/todo', {
+                fetch(path, {
                     method: 'PUT',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(data)
