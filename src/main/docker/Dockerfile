@@ -3,7 +3,7 @@
 #
 # Before building the container image run:
 #
-# ./mvnw package -Pquarkus-native,quarkus -Dquarkus.native.container-build=true
+# ./mvnw clean package -Pquarkus-native,quarkus -Dquarkus.native.container-build=true
 #
 # Then, build the image with:
 #
